@@ -6,7 +6,7 @@ import { generateBlogs } from "./utils";
 import Navbar from "./components/Navbar";
 
 function App() {
-  const [blogs, _] = useState(generateBlogs(10));
+  const [blogs] = useState(generateBlogs(10));
 
   return (
     <Router>
