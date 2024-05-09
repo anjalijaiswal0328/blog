@@ -11,16 +11,22 @@ function SingleBlogPage({ blogs = [] }) {
   }
 
   return (
-    <div>
-      <h2>{blog.title}</h2>
+    <div className="blog-card">
+      <img
+        src={blog.image}
+        alt={blog.title}
+        style={{ height: "200px", width: "100%" }}
+      />
+      <h2>{blog.title.toUpperCase()}</h2>
       <p>{blog.description}</p>
       <div>
         Tags:{" "}
         {blog.tags.map((tag) => (
-          <span key={tag}>{tag}</span>
+          <span className="tag" key={tag}>
+            {tag}
+          </span>
         ))}
       </div>
-      <p>{blog.content}</p>
     </div>
   );
 }

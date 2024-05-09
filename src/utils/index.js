@@ -7,10 +7,11 @@ export const generateBlogs = function (numberOfBlogs) {
     blogs.push({
       id: faker.lorem.slug(),
       title: faker.lorem.words(3),
-      descrription: faker.lorem.paragraphs(3),
+      description: faker.lorem.paragraphs(3),
       avatar: faker.image.avatar(),
-      image: faker.image.urlPlaceholder(),
+      image: faker.image.urlLoremFlickr(),
       tags: ["Hello", "World"],
+      createdOn: faker.date.anytime(),
     });
   }
 

@@ -8,10 +8,10 @@ function SortFilter({ onChange }) {
 
   return (
     <div>
-      <label htmlFor="sort">Sort by:</label>
+      <label htmlFor="sort">Sort by : </label>
       <select id="sort" onChange={handleSortChange}>
         <option value="date">Date</option>
-        <option value="popularity">Popularity</option>
+        <option value="popularity">Title</option>
       </select>
     </div>
   );

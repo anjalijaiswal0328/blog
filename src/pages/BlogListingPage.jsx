@@ -17,9 +17,9 @@ function BlogListingPage({ blogs = [] }) {
     );
     // Sort filtered blogs
     if (sortBy === "date") {
-      filtered.sort((a, b) => new Date(b.date) - new Date(a.date));
-    } else if (sortBy === "popularity") {
-      filtered.sort((a, b) => b.likes - a.likes);
+      filtered.sort((a, b) => new Date(b.createdOn) - new Date(a.createdOn));
+    } else if (sortBy === "title") {
+      filtered.sort((a, b) => b.title - b.title);
     }
     setFilteredBlogs(filtered);
   }, [searchQuery, sortBy]);
@@ -34,8 +34,11 @@ function BlogListingPage({ blogs = [] }) {
 
   return (
     <div>
-      <SearchBar onSearch={handleSearch} />
-      <SortFilter onChange={handleSortChange} />
+      <div className="header-container">
+        <SearchBar onSearch={handleSearch} />
+        <SortFilter onChange={handleSortChange} />
+      </div>
+
       <div className="blog-list">
         {filteredBlogs.map((blog) => (
           <BlogCard key={blog.id} blog={blog} />

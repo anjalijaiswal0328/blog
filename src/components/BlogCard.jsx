@@ -7,12 +7,19 @@ function BlogCard({ blog }) {
 
   return (
     <div className="blog-card">
-      <h2>{blog.title}</h2>
+      <img
+        src={blog.image}
+        alt={blog.title}
+        style={{ height: "200px", width: "100%" }}
+      />
+      <h2>{blog.title.toUpperCase()}</h2>
       <p>{blog.description}</p>
       <div>
         Tags:{" "}
         {blog.tags.map((tag) => (
-          <span key={tag}>{tag}</span>
+          <span className="tag" key={tag}>
+            {tag}
+          </span>
         ))}
       </div>
       <Link to={`/blog/${blog.id}`}>
