@@ -22,7 +22,7 @@ function BlogListingPage({ blogs = [] }) {
       filtered.sort((a, b) => b.title - b.title);
     }
     setFilteredBlogs(filtered);
-  }, [searchQuery, sortBy]);
+  }, [searchQuery, sortBy, blogs]);
 
   const handleSearch = (query) => {
     setSearchQuery(query);
